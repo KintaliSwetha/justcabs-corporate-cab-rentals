@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Sign Up</title>
+<style>
+body {
+  background-image: url('img1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: 100% 100%;
+}
+div {
+  width: 320px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin-left: 95px;
+  margin-top:65px;
+  background-color:white;
+}
+p.indent{ padding-left: 1.8em }
+
+</style>
+</head>
+<body>
+
+<h2 class="sign"><center>Sign Up</center></h2>
+<br>
+<div><center>
+<br>
+<p class="indent">
+<form action="company.php" method="post" class="pure-form">
+	<label>Company id *</label><input type="text" name="field1" maxlength="10" required>
+	<br><br>
+    <label>Company Name *</label><input type="text" name="field2" class="field-divided" maxlength="25"required> 
+    </br></br>
+	<label>Password *</label><input type="password" name="field3" id="password" maxlength="15" required>
+	</br></br>
+	<label> Confirm Password *</label><input type="password" id="confirm_password" maxlength="15" required>
+	<br><br>
+        <label>Email *</label><input type="email" name="field4" class="field-long" maxlength="25" required>
+     </br></br>
+        <label>Address *</label><textarea name="field5" id="addr" class="field-long field-textarea" maxlength="50" required></textarea>
+      <br></br>
+        <label>Phone No. *</label><input type="number" name="field6" required>
+      </br></br>
+</br>
+        <button type="submit" class="pure-button pure-button-primary">confirm</button>
+</form></p></center>
+<script>
+var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
+</br>
+</div>
+</body>
+</html>
